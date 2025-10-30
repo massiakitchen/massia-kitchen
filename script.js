@@ -1,21 +1,83 @@
-// تبديل بين معارض الألومنيوم والخشب
-function showGallery(type) {
-  document.querySelectorAll('.gallery').forEach(g => g.classList.remove('active'));
-  document.querySelectorAll('.gallery-buttons button').forEach(b => b.classList.remove('active'));
+// ==============================
+// Basic interactions for the site
+// ==============================
 
-  document.getElementById(type).classList.add('active');
-  event.target.classList.add('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // set year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-// إظهار الأقسام بتأثير أثناء التمرير
-const sections = document.querySelectorAll('.section');
-const showOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const secTop = sec.getBoundingClientRect().top;
-    if (secTop < triggerBottom) sec.classList.add('visible');
+  // Gallery filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.gallery-grid .item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      const filter = e.currentTarget.getAttribute('data-filter');
+      filterGallery(filter);
+    });
   });
-};
 
-window.addEventListener('scroll', showOnScroll);
-window.addEventListener('load', showOnScroll);
+  function filterGallery(filter) {
+    items.forEach(it => {
+      if (filter === 'all') {
+        it.style.display = '';
+      } else {
+        if (!it.classList.contains(filter)) it.style.display = 'none';
+        else it.style.display = '';
+      }
+    });
+  }
+
+  // Lightbox for gallery images
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  document.querySelectorAll('.gallery-grid .card img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      openLightbox(e.currentTarget);
+    });
+  });
+
+  function openLightbox(imgEl) {
+    lightboxImg.src = imgEl.src;
+    lightbox.classList.add('visible');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+  window.closeLightbox = function(){
+    lightbox.classList.remove('visible');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+  };
+  document.querySelector('.close-lightbox').addEventListener('click', closeLightbox);
+
+  // Simple form handler (demo)
+  window.handleForm = function(e){
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    // For static site: show a small success message and open whatsapp prefilled
+    const message = encodeURIComponent(`مرحبًا، اسمي ${name}، هاتفي: ${phone}. أود معرفة المزيد عن المطابخ.`);
+    // open whatsapp as quick contact
+    window.open(`https://wa.me/201092497811?text=${message}`, '_blank');
+    form.reset();
+    alert('تم فتح واتساب لإرسال رسالتك — يمكنك تعديل النص وإرساله.');
+    return false;
+  };
+
+  // Scroll reveal simple
+  const revealEls = document.querySelectorAll('.section, .card');
+  const onScroll = () => {
+    const trigger = window.innerHeight * 0.85;
+    revealEls.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) el.style.opacity = 1, el.style.transform = 'translateY(0)', el.style.transition = 'all .6s ease-out';
+      else el.style.opacity = 0.0, el.style.transform = 'translateY(20px)';
+    });
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+});
