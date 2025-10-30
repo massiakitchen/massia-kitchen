@@ -1,97 +1,254 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شركة الماسية للمطابخ الألومنيوم</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الماسية للمطابخ | تصميم وتنفيذ مطابخ</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Meta for theme color -->
+  <meta name="theme-color" content="#d4af37">
 </head>
 <body>
 
   <!-- ===== Header ===== -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="شعار شركة الماسية" />
-      <h1>شركة الماسية للمطابخ</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/logo.png" alt="شعار الماسية" class="logo" id="logoPlaceholder">
+        <div class="brand-text">
+          <h1>الماسية للمطابخ</h1>
+          <p class="tagline">تصميم عصري • جودة عالية • تنفيذ متقن</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <a href="#about">من نحن</a>
+        <a href="#works">أعمالنا</a>
+        <a href="#branches">فروعنا</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+
+      <a class="cta-header" href="https://wa.me/201092497811" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+        تواصل الآن
+      </a>
     </div>
-    <nav>
-      <a href="#about">من نحن</a>
-      <a href="#gallery">معرض المطابخ</a>
-      <a href="#branches">فروعنا</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
   </header>
 
-  <!-- ===== About ===== -->
-  <section id="about" class="section">
-    <h2>من نحن</h2>
-    <p>
-      تأسست شركة <strong>الماسية للمطابخ الألومنيوم</strong> لتكون من الشركات الرائدة في تصميم وتصنيع المطابخ العصرية عالية الجودة.
-      نحرص على الجمع بين <strong>الأناقة والعملية</strong> في كل تصميم نقدمه، مع استخدام خامات مميزة وتقنيات حديثة تضمن المتانة والجمال في آنٍ واحد.
-      نقدم حلولًا متكاملة تناسب جميع الأذواق والمساحات — من المطابخ الألومنيوم الحديثة إلى التصاميم الخشبية الدافئة التي تعكس الطابع الكلاسيكي الفاخر.
-    </p>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>أهلاً بكم في <span class="gold">الماسية للمطابخ</span></h2>
+        <p>نحو مطبخ أحلامك — تصميمات مميزة من الألومنيوم والخشب مع تنفيذ احترافي وخامات عالية الجودة.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#works">شاهد أعمالنا</a>
+          <a class="btn btn-ghost" href="https://wa.me/201092497811" target="_blank" rel="noopener">احصل على استشارة</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <!-- placeholder image; استبدلها بصورك لاحقًا -->
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60" alt="مطبخ عصري" loading="lazy">
+      </div>
+    </div>
   </section>
 
-  <!-- ===== Gallery ===== -->
-  <section id="gallery" class="section">
-    <h2>معرض المطابخ</h2>
-    <div class="gallery-buttons">
-      <button class="active" onclick="showGallery('aluminum')">مطابخ الألومنيوم</button>
-      <button onclick="showGallery('wood')">مطابخ الخشب</button>
+  <!-- ===== About ===== -->
+  <section id="about" class="section container">
+    <div class="section-grid">
+      <div class="about-text">
+        <h3>من نحن</h3>
+        <p>
+          تأسست شركة <strong>الماسية للمطابخ</strong> لتقدم حلولاً متكاملة في تصميم وتصنيع المطابخ بتقنيات حديثة وخامات متينة.
+          نعمل على تحقيق توازن مثالي بين الجمالية والعملية لضمان مطبخ يظل جميلًا ومريحًا لسنين.
+        </p>
+        <ul class="features">
+          <li>تصميم حسب المساحة والمتطلبات</li>
+          <li>خامات عالية الجودة ومتانة طويلة الأمد</li>
+          <li>تنفيذ محترف وتسليم مُنظم</li>
+        </ul>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <h4>10+</h4>
+          <p>سنوات خبرة</p>
+        </div>
+        <div class="stat">
+          <h4>500+</h4>
+          <p>مشروع منفذ</p>
+        </div>
+        <div class="stat">
+          <h4>رضا العملاء</h4>
+          <p>معايير جودة عالية</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="aluminum" class="gallery active">
-      <img src="images/aluminum/1.jpg" alt="مطبخ ألومنيوم 1">
-      <img src="images/aluminum/2.jpg" alt="مطبخ ألومنيوم 2">
-      <img src="images/aluminum/3.jpg" alt="مطبخ ألومنيوم 3">
-    </div>
+  <!-- ===== Works / Gallery ===== -->
+  <section id="works" class="section works">
+    <div class="container">
+      <h3>أعمالنا</h3>
 
-    <div id="wood" class="gallery">
-      <img src="images/wood/1.jpg" alt="مطبخ خشب 1">
-      <img src="images/wood/2.jpg" alt="مطبخ خشب 2">
-      <img src="images/wood/3.jpg" alt="مطبخ خشب 3">
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="aluminum">مطابخ الألومنيوم</button>
+        <button class="filter-btn" data-filter="wood">مطابخ الخشب</button>
+      </div>
+
+      <div class="grid gallery-grid" id="galleryGrid">
+        <!-- أمثلة صور افتراضية: استبدلها بصورك داخل مجلد images/aluminum و images/wood -->
+        <!-- Aluminum -->
+        <figure class="card item aluminum">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=60" alt="مطبخ ألومنيوم" loading="lazy">
+          <figcaption>
+            <h4>تصميم ألومنيوم 1</h4>
+            <p>تصميم عصري مقاوم للرطوبة</p>
+          </figcaption>
+        </figure>
+
+        <figure class="card item aluminum">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e0a9?auto=format&fit=crop&w=900&q=60" alt="مطبخ ألومنيوم 2" loading="lazy">
+          <figcaption>
+            <h4>تصميم ألومنيوم 2</h4>
+            <p>لمسات ذهبيّة راقية</p>
+          </figcaption>
+        </figure>
+
+        <!-- Wood -->
+        <figure class="card item wood">
+          <img src="https://images.unsplash.com/photo-1600585154411-587b4a6a1b2f?auto=format&fit=crop&w=900&q=60" alt="مطبخ خشب 1" loading="lazy">
+          <figcaption>
+            <h4>مطبخ خشب كلاسيكي</h4>
+            <p>دفء الخشب الطبيعي</p>
+          </figcaption>
+        </figure>
+
+        <figure class="card item wood">
+          <img src="https://images.unsplash.com/photo-1542444459-db3d5f1682a8?auto=format&fit=crop&w=900&q=60" alt="مطبخ خشب 2" loading="lazy">
+          <figcaption>
+            <h4>مطبخ خشب مودرن</h4>
+            <p>تصاميم عملية ومساحات ذكية</p>
+          </figcaption>
+        </figure>
+
+        <!-- more placeholders (duplicate to show grid) -->
+        <figure class="card item aluminum">
+          <img src="https://images.unsplash.com/photo-1551561651-80b5b4a4b2f6?auto=format&fit=crop&w=900&q=60" alt="مطبخ ألومنيوم 3" loading="lazy">
+          <figcaption>
+            <h4>تصميم ألومنيوم 3</h4>
+            <p>تشطيب مميز</p>
+          </figcaption>
+        </figure>
+
+        <figure class="card item wood">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a6b02a3f8e?auto=format&fit=crop&w=900&q=60" alt="مطبخ خشب 3" loading="lazy">
+          <figcaption>
+            <h4>مطبخ خشب 3</h4>
+            <p>تفاصيل دقيقة وعناية بالتشطيب</p>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
   <!-- ===== Branches ===== -->
-  <section id="branches" class="section branches">
-    <h2>فروعنا</h2>
-    <div class="branches-container">
-      <div class="branch-list">
-        <h3>الفرع الرئيسي</h3>
-        <p>المنصورة – شارع عبد السلام عارف</p>
-        <h3>الفرع الثاني</h3>
+  <section id="branches" class="section container">
+    <h3>فروعنا</h3>
+    <div class="branches-grid">
+      <div class="branches-list card">
+        <h4>الفرع الرئيسي</h4>
+        <p>المنصورة - شارع عبد السلام عارف</p>
+
+        <h4>الفرع الثاني</h4>
         <p>شارع سامية الجمل</p>
+
+        <div class="contact-mini">
+          <a href="tel:+201092497811">📞 +20 109 249 7811</a>
+          <a href="https://wa.me/201092497811" target="_blank" rel="noopener">💬 تواصل عبر واتساب</a>
+        </div>
       </div>
-      <div class="branch-map">
+
+      <div class="branches-map card">
+        <!-- embed map: استخدمت رابط مضمّن؛ إن أردت تغيير الموقع استخدم embed link من Google Maps -->
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.4127195346613!2d31.379317!3d31.041745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d5d2dfcf287%3A0x88df1d4f4fa7ec72!2z2KfZhNij2KjYp9mG2Kkg2KfZhNix2YrYp9mE2Kkg2KfZhNix2K_ZitmG2YrYqSDYqNmE2KfZhNmG2YrYqQ!5e0!3m2!1sar!2seg!4v1730214000000!5m2!1sar!2seg"
-          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.4127195346613!2d31.379317!3d31.041745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d5d2dfcf287%3A0x88df1d4f4fa7ec72!2z2KfZhNij2KjYp9mG2Kkg2KfZhNix2YrYp9mE2Kkg2KfZhNix2K_ZitmG2YrYqSDYqNmE2KfZhNmG2YrYqQ!5e0!3m2!1sar!2seg!4v1730214000000!5m2!1sar!2seg" 
+          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
   <!-- ===== Contact ===== -->
-  <section id="contact" class="section contact">
-    <h2>تواصل معنا</h2>
-    <p>📞 رقم الهاتف: <a href="tel:+201092497811">01092497811+</a></p>
-    <p>💬 واتساب: <a href="https://wa.me/201092497811" target="_blank">اضغط هنا للتواصل المباشر</a></p>
-    <p>📍 العنوان: المنصورة، مصر</p>
-    <div class="socials">
-      <a href="https://www.facebook.com/MassiaKitchen" target="_blank">فيسبوك</a> |
-      <a href="#" target="_blank">إنستجرام</a>
+  <section id="contact" class="section contact-section">
+    <div class="container contact-inner">
+      <div class="contact-card card">
+        <h3>تواصل معنا</h3>
+        <p>للاستفسار أو طلب قياس/عرض سعر تواصل معنا على:</p>
+        <div class="contact-row">
+          <a class="big-link" href="tel:+201092497811">📞 +20 109 249 7811</a>
+          <a class="big-link" href="https://wa.me/201092497811" target="_blank" rel="noopener">💬 واتساب</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.facebook.com/MassiaKitchen" target="_blank" rel="noopener">فيسبوك</a>
+          <a href="#" target="_blank" rel="noopener">إنستجرام</a>
+        </div>
+      </div>
+
+      <div class="contact-form card">
+        <h4>أرسل طلبك سريعًا</h4>
+        <!-- Since this is static site, the form can be connected later to email service (Formspree / EmailJS) -->
+        <form id="leadForm" onsubmit="return handleForm(event)">
+          <label>الاسم</label>
+          <input type="text" name="name" required placeholder="اسمك">
+          <label>الهاتف</label>
+          <input type="tel" name="phone" required placeholder="+20">
+          <label>الطلب / ملاحظات</label>
+          <textarea name="message" rows="4" placeholder="اكتب طلبك أو وصف المساحة"></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">أرسل</button>
+            <button type="reset" class="btn btn-ghost">مسح</button>
+          </div>
+          <p class="form-note">(نموذج تجريبي — يمكن توصيله بخدمة إرسال بريد لاحقًا)</p>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer>
-    <p>© 2025 شركة الماسية للمطابخ. جميع الحقوق محفوظة.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> شركة الماسية للمطابخ. جميع الحقوق محفوظة.</p>
+      <div class="footer-links">
+        <a href="#about">من نحن</a>
+        <a href="#works">أعمالنا</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- ===== WhatsApp Button ===== -->
-  <a href="https://wa.me/201092497811" class="whatsapp" target="_blank" title="تواصل عبر واتساب">💬</a>
+  <!-- ===== Floating WhatsApp Button ===== -->
+  <a class="whatsapp-fab" href="https://wa.me/201092497811" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M20.5 3.5C18.1 1.1 14.95 0 11.7 0 5.28 0 .2 5.08.2 11.5c0 2 .56 3.95 1.62 5.66L0 24l6.07-1.6c1.61.88 3.45 1.34 5.33 1.34 6.42 0 11.5-5.08 11.5-11.5 0-3.24-1.1-6.39-3.2-8.4z" fill="#25D366"/>
+      <path d="M17 15.5c-.4 0-2.3-1-2.7-1.1-.3-.1-.5-.1-.8.1-.1.1-.8.9-1 1.1-.2.2-.4.2-.8.1-.4-.1-1.6-.6-3-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.1-.8.1-.2.3-.5.5-.8.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.8-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6s-.4 0-.6 0c-.2 0-.6.1-.9.4-.3.3-1 0-1.5-.1-.5-.1-1.2-.3-1.8 0-1.4.6-1.2 2.1-1.2 2.5 0 .4.9 2.7 2.1 4.2 1.4 1.9 3 3.3 5.2 4.3 2.2 1 3.2 1 3.9 1 .7 0 1.7-.8 2 1.5.3 2.3 1.1 2.6 2 2.5.9-.1 2.9-1.3 3.3-3 .4-1.7.4-3.2-.6-4.3-.9-1-2.3-1.4-2.7-1.4z" fill="#fff"/>
+    </svg>
+  </a>
 
+  <!-- ===== Lightbox Modal (for images) ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="">
+    <button class="close-lightbox" aria-label="إغلاق">&times;</button>
+  </div>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
