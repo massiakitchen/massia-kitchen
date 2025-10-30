@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة الماسية للمطابخ الألومنيوم</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="شعار شركة الماسية" />
+      <h1>شركة الماسية للمطابخ</h1>
+    </div>
+    <nav>
+      <a href="#about">من نحن</a>
+      <a href="#gallery">معرض المطابخ</a>
+      <a href="#branches">فروعنا</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <h2>من نحن</h2>
+    <p>
+      تأسست شركة <strong>الماسية للمطابخ الألومنيوم</strong> لتكون من الشركات الرائدة في تصميم وتصنيع المطابخ العصرية عالية الجودة.
+      نحرص على الجمع بين <strong>الأناقة والعملية</strong> في كل تصميم نقدمه، مع استخدام خامات مميزة وتقنيات حديثة تضمن المتانة والجمال في آنٍ واحد.
+      نقدم حلولًا متكاملة تناسب جميع الأذواق والمساحات — من المطابخ الألومنيوم الحديثة إلى التصاميم الخشبية الدافئة التي تعكس الطابع الكلاسيكي الفاخر.
+    </p>
+  </section>
+
+  <!-- ===== Gallery ===== -->
+  <section id="gallery" class="section">
+    <h2>معرض المطابخ</h2>
+    <div class="gallery-buttons">
+      <button class="active" onclick="showGallery('aluminum')">مطابخ الألومنيوم</button>
+      <button onclick="showGallery('wood')">مطابخ الخشب</button>
+    </div>
+
+    <div id="aluminum" class="gallery active">
+      <img src="images/aluminum/1.jpg" alt="مطبخ ألومنيوم 1">
+      <img src="images/aluminum/2.jpg" alt="مطبخ ألومنيوم 2">
+      <img src="images/aluminum/3.jpg" alt="مطبخ ألومنيوم 3">
+    </div>
+
+    <div id="wood" class="gallery">
+      <img src="images/wood/1.jpg" alt="مطبخ خشب 1">
+      <img src="images/wood/2.jpg" alt="مطبخ خشب 2">
+      <img src="images/wood/3.jpg" alt="مطبخ خشب 3">
+    </div>
+  </section>
+
+  <!-- ===== Branches ===== -->
+  <section id="branches" class="section branches">
+    <h2>فروعنا</h2>
+    <div class="branches-container">
+      <div class="branch-list">
+        <h3>الفرع الرئيسي</h3>
+        <p>المنصورة – شارع عبد السلام عارف</p>
+        <h3>الفرع الثاني</h3>
+        <p>شارع سامية الجمل</p>
+      </div>
+      <div class="branch-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.4127195346613!2d31.379317!3d31.041745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d5d2dfcf287%3A0x88df1d4f4fa7ec72!2z2KfZhNij2KjYp9mG2Kkg2KfZhNix2YrYp9mE2Kkg2KfZhNix2K_ZitmG2YrYqSDYqNmE2KfZhNmG2YrYqQ!5e0!3m2!1sar!2seg!4v1730214000000!5m2!1sar!2seg"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section contact">
+    <h2>تواصل معنا</h2>
+    <p>📞 رقم الهاتف: <a href="tel:+201092497811">01092497811+</a></p>
+    <p>💬 واتساب: <a href="https://wa.me/201092497811" target="_blank">اضغط هنا للتواصل المباشر</a></p>
+    <p>📍 العنوان: المنصورة، مصر</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/MassiaKitchen" target="_blank">فيسبوك</a> |
+      <a href="#" target="_blank">إنستجرام</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 شركة الماسية للمطابخ. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- ===== WhatsApp Button ===== -->
+  <a href="https://wa.me/201092497811" class="whatsapp" target="_blank" title="تواصل عبر واتساب">💬</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
