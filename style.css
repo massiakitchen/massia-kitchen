@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+  color: #222;
+}
+
+/* ===== Header ===== */
+header {
+  background: #111;
+  color: #d4af37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;
+  margin-left: 10px;
+}
+
+header nav a {
+  color: #d4af37;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+/* ===== Gallery ===== */
+.gallery-buttons {
+  margin-bottom: 20px;
+}
+
+.gallery-buttons button {
+  background: #111;
+  color: #d4af37;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gallery-buttons button.active {
+  background: #d4af37;
+  color: #111;
+}
+
+.gallery {
+  display: none;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery.active {
+  display: flex;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== Branches ===== */
+.branches-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.branch-list {
+  text-align: right;
+  flex: 1 1 250px;
+}
+
+.branch-list h3 {
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.branch-map {
+  flex: 1 1 400px;
+}
+
+/* ===== Contact ===== */
+.contact a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111;
+  color: #d4af37;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ===== WhatsApp Button ===== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+}
