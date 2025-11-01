@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function filterGallery(filter) {
+  /*function filterGallery(filter) {
     items.forEach(it => {
       if (filter === 'all') {
         it.style.display = '';
@@ -28,7 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
         else it.style.display = '';
       }
     });
-  }
+  }*/
+
+  function filterGallery(filter) {
+  items.forEach(it => {
+    it.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+    if (filter === 'all' || it.classList.contains(filter)) {
+      it.style.display = 'block';
+      requestAnimationFrame(() => {
+        it.style.opacity = '1';
+        it.style.transform = 'scale(1)';
+      });
+    } else {
+      it.style.opacity = '0';
+      it.style.transform = 'scale(0.95)';
+      setTimeout(() => (it.style.display = 'none'), 300);
+    }
+  });
+}
+
 
   // Lightbox for gallery images
   const lightbox = document.getElementById('lightbox');
