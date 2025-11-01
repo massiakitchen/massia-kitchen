@@ -73,17 +73,73 @@ html,body{height:100%;margin:0;font-family:'Cairo',sans-serif;color:var(--text);
 .filter-btn.active{background:var(--gold);color:var(--black);box-shadow:0 8px 22px rgba(212,175,55,0.16)}
 .filter-btn:hover{transform:translateY(-3px)}
 
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+/*.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
 .card{overflow:hidden}
 .card img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .35s ease,box-shadow .25s}
 .card:hover img{transform:scale(1.06);box-shadow:0 18px 50px rgba(0,0,0,0.15)}
 .card figcaption{padding:12px;background:linear-gradient(180deg,#fff,#fafafa)}
 .card figcaption h4{margin:0;font-size:16px;color:#111}
-.card figcaption p{margin:6px 0 0;color:#666;font-size:13px}
+.card figcaption p{margin:6px 0 0;color:#666;font-size:13px}*/
+
+/* ===== تحسين مظهر معرض الأعمال ===== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+}
+
+.card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.card:hover img {
+  transform: scale(1.06);
+}
+
+.card figcaption {
+  padding: 12px 14px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.card figcaption h4 {
+  font-size: 16px;
+  margin: 6px 0 4px;
+  color: var(--black);
+}
+.card figcaption p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card img { height: 200px; }
+}
+
 
 /* grid responsiveness */
-@media (max-width:980px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} .section-grid{grid-template-columns:1fr} }
-@media (max-width:600px){ .gallery-grid{grid-template-columns:1fr} .main-nav{display:none} .cta-header{display:none} .brand-text h1{font-size:16px} }
+/*@media (max-width:980px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} .section-grid{grid-template-columns:1fr} }
+@media (max-width:600px){ .gallery-grid{grid-template-columns:1fr} .main-nav{display:none} .cta-header{display:none} .brand-text h1{font-size:16px} }*/
 
 /* ===== Branches grid ===== */
 .branches-grid{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:start}
