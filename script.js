@@ -1,17 +1,11 @@
 // ==============================
 // Basic interactions for the site
 // ==============================
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  // ==============================
-  // Set current year in footer
-  // ==============================
+  // set year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ==============================
-  // Gallery Filters
-  // ==============================
+  // Gallery filters
   const filterBtns = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.gallery-grid .item');
 
@@ -19,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       filterBtns.forEach(b => b.classList.remove('active'));
       e.currentTarget.classList.add('active');
-
       const filter = e.currentTarget.getAttribute('data-filter');
       filterGallery(filter);
     });
@@ -28,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterGallery(filter) {
     items.forEach(it => {
       it.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-
       if (filter === 'all' || it.classList.contains(filter)) {
         it.style.display = 'block';
         requestAnimationFrame(() => {
@@ -43,9 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==============================
-  // Lightbox for Gallery Images
-  // ==============================
+  // Lightbox for gallery images
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
 
@@ -62,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.setAttribute('aria-hidden', 'false');
   }
 
-  window.closeLightbox = function () {
+  window.closeLightbox = function() {
     lightbox.classList.remove('visible');
     lightbox.setAttribute('aria-hidden', 'true');
     lightboxImg.src = '';
@@ -70,22 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.close-lightbox').addEventListener('click', closeLightbox);
 
-  // ==============================
-  // Simple Form Handler (demo)
-  // ==============================
-  window.handleForm = function (e) {
+  // Simple form handler (demo)
+  window.handleForm = function(e) {
     e.preventDefault();
-
     const form = e.target;
     const name = form.name.value.trim();
     const phone = form.phone.value.trim();
+    const msg = form.message.value.trim() || "أود معرفة المزيد عن المطابخ.";
 
-    // Prefilled WhatsApp message
-    const message = encodeURIComponent(
-      `مرحبًا، اسمي ${name}، هاتفي: ${phone}. أود معرفة المزيد عن المطابخ.`
-    );
-
-    // Open WhatsApp chat
+    // Corrected WhatsApp link
+    const message = encodeURIComponent(`مرحبًا، اسمي ${name}، هاتفي: ${phone}. ${msg}`);
     window.open(`https://wa.me/201092497811?text=${message}`, '_blank');
 
     form.reset();
@@ -93,17 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   };
 
-  // ==============================
-  // Scroll Reveal Animation
-  // ==============================
+  // Scroll reveal simple
   const revealEls = document.querySelectorAll('.section, .card');
-
   const onScroll = () => {
     const trigger = window.innerHeight * 0.85;
-
     revealEls.forEach(el => {
       const top = el.getBoundingClientRect().top;
-
       if (top < trigger) {
         el.style.opacity = 1;
         el.style.transform = 'translateY(0)';
@@ -114,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   };
-
   window.addEventListener('scroll', onScroll);
   onScroll();
 });
