@@ -16,6 +16,7 @@
 </head>
 <body>
 
+ 
   <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="container header-inner">
@@ -26,19 +27,26 @@
           <p class="tagline">تصميم عصري • جودة عالية • تنفيذ متقن</p>
         </div>
       </div>
-
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
+  
+      <!-- menu toggle (mobile) -->
+      <button class="menu-toggle" aria-label="افتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <!-- main nav: note class "nav-menu" تتوافق مع JS -->
+      <nav class="main-nav nav-menu" aria-label="القائمة الرئيسية">
         <a href="#about">من نحن</a>
         <a href="#works">أعمالنا</a>
         <a href="#branches">فروعنا</a>
         <a href="#contact">تواصل</a>
       </nav>
-
+  
       <a class="cta-header" href="https://wa.me/201092497811" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
         تواصل الآن
       </a>
     </div>
   </header>
+
 
   <!-- ===== Hero ===== -->
   <section class="hero">
