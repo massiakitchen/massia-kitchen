@@ -135,6 +135,9 @@ body {
 /* ==============================
    قسم البداية (Hero)
 ============================== */
+/* ==============================
+   Hero Section
+============================== */
 .hero {
   display: flex;
   align-items: center;
@@ -223,34 +226,6 @@ body {
   }
 }
 
-/* أزرار عامة */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-primary {
-  background-color: #d4af37;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #c29d2f;
-}
-
-.btn-ghost {
-  border: 2px solid #d4af37;
-  color: #d4af37;
-}
-
-.btn-ghost:hover {
-  background-color: #d4af37;
-  color: #fff;
-}
 
 /* ==============================
    قسم الأعمال
