@@ -141,10 +141,83 @@ html,body{height:100%;margin:0;font-family:'Cairo',sans-serif;color:var(--text);
 /*@media (max-width:980px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} .section-grid{grid-template-columns:1fr} }
 @media (max-width:600px){ .gallery-grid{grid-template-columns:1fr} .main-nav{display:none} .cta-header{display:none} .brand-text h1{font-size:16px} }*/
 
-/* ===== Branches grid ===== */
+/* ===== Branches grid ===== 
 .branches-grid{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:start}
 .branches-list a{display:inline-block;margin-top:10px;color:var(--gold);text-decoration:none}
-.branches-map iframe{border-radius:10px}
+.branches-map iframe{border-radius:10px} */
+
+
+/* ===== Branches grid ===== */
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.branch-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.branch-info {
+  padding: 1rem 1.5rem;
+  background: var(--section-bg, #fafafa);
+}
+
+.branch-info h4 {
+  margin-bottom: 0.4rem;
+  color: var(--text-dark, #222);
+}
+
+.branch-info p {
+  color: var(--text-muted, #555);
+  font-size: 0.95rem;
+}
+
+.branch-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* روابط الفروع */
+.branches-list a,
+.branch-info a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--gold, #c9a227);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.branches-list a:hover,
+.branch-info a:hover {
+  color: var(--gold-dark, #b38e1a);
+}
+
+/* تحسين العرض في الموبايل */
+@media (max-width: 768px) {
+  .branches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-map iframe {
+    height: 250px;
+  }
+}
+
 
 /* ===== Contact area ===== */
 .contact-inner{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
