@@ -135,7 +135,7 @@ body {
 /* ==============================
    قسم البداية (Hero)
 ============================== */
-.hero {
+/*.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,7 +161,7 @@ body {
   background: rgba(0,0,0,0.55);
 }*/
 
-.hero .overlay {
+/*.hero .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(120deg, rgba(17,17,17,0.55), rgba(250,250,250,0));
@@ -185,7 +185,45 @@ body {
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
+*/
 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(17,17,17,0.55), rgba(250,250,250,0));
+  mix-blend-mode: multiply;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 28px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 34px;
+  margin: 0;
+  color: #fff;
+}
+
+.hero-text p {
+  color: #f0f0f0;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
 .hero-text .gold {
   color: #d4af37;
 }
