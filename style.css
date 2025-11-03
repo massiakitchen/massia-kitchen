@@ -135,97 +135,88 @@ body {
 /* ==============================
    قسم البداية (Hero)
 ============================== */
-/* ==============================
-   Hero Section
-============================== */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 64px 0;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  min-height: 85vh;
   position: relative;
   overflow: hidden;
 }
 
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero .overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(17,17,17,0.55), rgba(250,250,250,0));
-  mix-blend-mode: multiply;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 520px;
-  gap: 28px;
-  align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
 }
 
 .hero-text h2 {
-  font-size: 34px;
-  margin: 0;
-  color: #fff;
-}
-
-.hero-text p {
-  color: #f0f0f0;
-  margin-top: 10px;
-  margin-bottom: 18px;
-  font-size: 16px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .hero-text .gold {
-  color: var(--gold);
+  color: #d4af37;
 }
 
 .hero-actions {
+  margin-top: 20px;
   display: flex;
-  gap: 12px;
+  gap: 15px;
 }
 
+/* أزرار عامة */
 .btn {
   display: inline-block;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 700;
-  transition: all .25s;
+  transition: 0.3s;
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--black);
+  background-color: #d4af37;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #c29d2f;
 }
 
 .btn-ghost {
-  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+}
+
+.btn-ghost:hover {
+  background-color: #d4af37;
   color: #fff;
-  border: 2px solid rgba(255,255,255,0.12);
 }
-
-/* Hero image */
-.hero-image img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  transform: translateY(6px);
-}
-
-/* Responsive hero */
-@media (max-width: 980px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .hero-image img {
-    height: 260px;
-  }
-}
-
 
 /* ==============================
    قسم الأعمال
