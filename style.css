@@ -32,7 +32,8 @@ html, body {
 ============================== */
 .container {
   width: 90%;
-  max-width: 1200px;
+  /*max-width: 1200px;*/
+  max-width: var(--max-width);
   margin: auto;
 }
 
