@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Sound toggle for whatsapp click
   const soundToggle = $('#sound-toggle');
-  const clickSound = new Audio('sounds/click.mp3'); clickSound.volume = 0.45;
+  const clickSound = new Audio('sounds/click.mp3'); clickSound.volume = 10;
   let soundEnabled = true;
   if (soundToggle) {
     soundToggle.addEventListener('click', () => {
