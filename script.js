@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (firstShow) {
       popSound.currentTime = 0;
       popSound.play().catch(()=>{});
-      firstShow = /*false*/ true;
+      firstShow = false;
     }
     hideTimer = setTimeout(()=> {
       bubble.classList.remove('visible');
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Sound toggle for whatsapp click
   const soundToggle = $('#sound-toggle');
-  const clickSound = new Audio('sounds/click.mp3'); clickSound.volume = /*0.45*/10;
+  const clickSound = new Audio('sounds/click.mp3'); clickSound.volume = 0.45;
   let soundEnabled = true;
   if (soundToggle) {
     soundToggle.addEventListener('click', () => {
