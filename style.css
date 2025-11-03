@@ -136,7 +136,7 @@ html, body {
   font-weight: 600;
   position: relative;
   transition: color 0.3s;
-}
+}*/
 
 .main-nav a::after {
   content: '';
@@ -150,7 +150,7 @@ html, body {
 
 .main-nav a:hover::after {
   width: 100%;
-}*/
+}
 
 .cta-header {
   background-color: #d4af37;
