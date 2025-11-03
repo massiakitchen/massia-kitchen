@@ -124,7 +124,7 @@ html, body {
 }
 
 .main-nav a:hover {
-  color: #fff;
+  color: #222;
   background: rgba(255, 255, 255, 0.04);
 }
 
