@@ -96,3 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll);
   onScroll();
 });
+
+// ==============================
+// تبديل الوضع الليلي / النهاري
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // استرجاع الوضع السابق من التخزين المحلي
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+});
+
