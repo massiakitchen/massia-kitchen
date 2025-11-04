@@ -38,6 +38,20 @@ html, body {
   padding: 0 20px;
 }
 
+ul {
+            list-style-type: none;
+            padding: 0;
+
+.content span {
+            display: inline-block;
+            background: #007bff;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.0em;
+            margin: 5px;
+        }
+
 /* Preloader */
 #preloader {
   position: fixed;
