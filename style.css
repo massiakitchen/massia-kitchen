@@ -161,6 +161,11 @@ header.scrolled { box-shadow: 0 6px 30px rgba(0,0,0,0.5); transform: scale(0.995
 @keyframes goldShine { 0%{left:-150%}100%{left:150%} }
 .btn-gold-glow:hover { transform:translateY(-3px); box-shadow:0 0 20px rgba(212,175,55,0.6); }
 
+
+ul {
+            list-style-type: none;
+            padding: 0;
+   
 .content span {
             display: inline-block;
             background: #007bff;
