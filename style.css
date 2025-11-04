@@ -140,6 +140,7 @@ header.scrolled { box-shadow: 0 6px 30px rgba(0,0,0,0.5); transform: scale(0.995
 .hero-text { max-width:540px; }
 .hero-text h2 { font-size:2.6rem; margin:0 0 12px; color:var(--gold); }
 .gold-heading { font-size:2.4rem; font-weight:800; background:linear-gradient(90deg,#b8860b,#ffd700,#fff8dc,#b8860b); background-size:400%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: goldenShine 8s linear infinite; text-shadow:0 0 8px rgba(212,175,55,0.25); }
+.white-heading {font-size:2.6rem; margin:0 0 12px; color: #fff;}
 @keyframes goldenShine { 0%{background-position:200%}100%{background-position:-200%} }
 .hero-text p{ color: #ddd; margin-top:8px; font-size:1rem; }
 
