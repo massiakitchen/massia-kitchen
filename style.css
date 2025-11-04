@@ -150,7 +150,7 @@ header.scrolled { box-shadow: 0 6px 30px rgba(0,0,0,0.5); transform: scale(0.995
 .btn { display:inline-block; padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none; transition:all .25s; }
 .btn-primary { background: linear-gradient(90deg,#b8860b,#ffd700,#b8860b); background-size:300%; color:#000; border:none; box-shadow:0 6px 18px rgba(212,175,55,0.2); animation:goldBtn 8s linear infinite; }
 @keyframes goldBtn { 0%{background-position:200%}100%{background-position:-200%} }
-.btn-ghost { background:transparent; color:#fff; border:5px solid rgba(255,255,255,0.08); }
+.btn-ghost { padding-right:10px; background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.08); }
 
 /* btn gold glow (extra shine) */
 .btn-gold-glow { position:relative; overflow:hidden; border-radius:50px; padding:0.7rem 1.4rem; }
