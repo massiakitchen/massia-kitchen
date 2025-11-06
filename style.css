@@ -1,4 +1,25 @@
 /* ==============================
+   CSS Reset & Fixes
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* تحسين الأداء */
+html {
+  scroll-behavior: smooth;
+}
+
+/* تحسين الصور */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==============================
    Variables & Theme (Gold × Black)
 ============================== */
 :root{
@@ -1647,9 +1668,9 @@ body.light-mode .card figcaption {
   font-size: 0.9rem;
 }
 
-/* ==============================
-   Financing Options
-============================== */
+/* ==============================*/
+ /*  Financing Options */
+/*============================== */
 .financing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
