@@ -1473,3 +1473,56 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 }); // DOMContentLoaded end
+
+
+// أضف الدوال المفقودة في نهاية الملف:
+function initOptimizedScroll() {
+  console.log('Scroll optimizations initialized');
+  
+  // استخدام throttle للscroll events
+  const throttledScroll = throttle(() => {
+    // Handle scroll events efficiently
+    const header = document.querySelector('header.site-header');
+    if (window.scrollY > 60) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  }, 50);
+
+  window.addEventListener('scroll', throttledScroll, { passive: true });
+}
+
+function createAnnouncer() {
+  let announcer = document.getElementById('a11y-announcer');
+  if (!announcer) {
+    announcer = document.createElement('div');
+    announcer.id = 'a11y-announcer';
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.setAttribute('aria-atomic', 'true');
+    announcer.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;';
+    document.body.appendChild(announcer);
+  }
+  return announcer;
+}
+
+// دالة تحسين الصور
+function optimizeImages() {
+  const images = document.querySelectorAll('img:not([loading])');
+  images.forEach(img => {
+    img.setAttribute('loading', 'lazy');
+  });
+}
+
+// دالة لتحميل Service Worker بشكل آمن
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/massia-kitchen/sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registered successfully:', registration.scope);
+      })
+      .catch(function(err) {
+        console.log('ServiceWorker registration failed:', err);
+      });
+  }
+}
