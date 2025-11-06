@@ -1,3 +1,112 @@
+// إضافة تحميل متقدم للصور
+function initAdvancedLazyLoading() {
+  const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  }
+}
+
+
+
+// تحسين تحميل الخطوط
+const fontLoader = {
+  loadCriticalFonts: function() {
+    const font = new FontFace('Cairo', 'url(https://fonts.gstatic.com/s/cairo/v28/SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCArMQ.woff2)');
+    font.load().then(function(loadedFont) {
+      document.fonts.add(loadedFont);
+      document.body.classList.add('fonts-loaded');
+    });
+  }
+};
+
+// إضافة مؤشر تقدم للصفحة
+function initProgressBar() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'reading-progress';
+  progressBar.innerHTML = '<div class="reading-progress-bar"></div>';
+  document.body.prepend(progressBar);
+  
+  window.addEventListener('scroll', function() {
+    const winHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset;
+    const trackLength = docHeight - winHeight;
+    const progress = Math.floor(scrollTop / trackLength * 100);
+    
+    document.querySelector('.reading-progress-bar').style.width = progress + '%';
+  });
+}
+
+// إضافة تنبيهات ذكية
+const smartNotifications = {
+  show: function(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+      <div class="notification-content">
+        <span class="notification-message">${message}</span>
+        <button class="notification-close">&times;</button>
+      </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    });
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 5000);
+  }
+};
+
+
+// تحسين Structured Data
+function enhanceStructuredData() {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "الماسية للمطابخ والدريسينج",
+    "description": "تصميم وتنفيذ مطابخ الألومنيوم والخشب عالية الجودة - ضمان 10 سنوات - تركيب مجاني",
+    "url": "https://massiakitchen.github.io/massia-kitchen",
+    "logo": "https://massiakitchen.github.io/massia-kitchen/images/logo-light.png",
+    "telephone": "+201092497811",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "المنصورة - شارع عبد السلام عارف",
+      "addressLocality": "المنصورة",
+      "addressRegion": "الدقهلية",
+      "addressCountry": "EG"
+    },
+    "openingHours": "Mo-Su 09:00-21:00",
+    "sameAs": [
+      "https://www.facebook.com/MassiaKitchen"
+    ]
+  });
+  document.head.appendChild(script);
+}
+
 // دوال الأداء المفقودة
 function initOptimizedScroll() {
   // Initialize any scroll optimizations here
@@ -18,6 +127,88 @@ function createAnnouncer() {
   }
   return announcer;
 }
+
+
+// حماية من هجمات XSS
+function sanitizeHTML(str) {
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
+}
+
+// تحسين سياسة المحتوى الأمن
+const cspConfig = {
+  init: function() {
+    const meta = document.createElement('meta');
+    meta.httpEquiv = "Content-Security-Policy";
+    meta.content = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;";
+    document.head.appendChild(meta);
+  }
+};
+
+
+// نظام تحليلات محسن
+const analytics = {
+  track: function(event, data = {}) {
+    // Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', event, data);
+    }
+    
+    // Custom analytics
+    const analyticsData = {
+      event: event,
+      timestamp: new Date().toISOString(),
+      url: window.location.href,
+      userAgent: navigator.userAgent,
+      ...data
+    };
+    
+    console.log('Analytics Event:', analyticsData);
+    
+    // يمكن إرسال البيانات لخادمك هنا
+    this.sendToServer(analyticsData);
+  },
+  
+  sendToServer: function(data) {
+    // تنفيذ إرسال البيانات للخادم
+    fetch('/api/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    }).catch(error => console.log('Analytics error:', error));
+  },
+  
+  trackPageView: function() {
+    this.track('page_view', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  },
+  
+  trackUserEngagement: function() {
+    let engagementTime = 0;
+    const interval = setInterval(() => {
+      engagementTime += 5;
+      if (engagementTime % 30 === 0) {
+        this.track('user_engagement', {
+          engagement_time: engagementTime
+        });
+      }
+    }, 5000);
+    
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearInterval(interval);
+        this.track('session_end', {
+          total_engagement: engagementTime
+        });
+      }
+    });
+  }
+};
 
 
 // Enhanced Accessibility Functions
