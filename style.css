@@ -1669,8 +1669,9 @@ body.light-mode .card figcaption {
 }
 
 /* ==============================*/
- /*  Financing Options */
-/*============================== */
+ /*  Financing Options - تم التصحيح */
+/* ==============================*/
+
 .financing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
