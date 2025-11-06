@@ -1,3 +1,46 @@
+// Enhanced performance functions
+const perf = {
+  lastScroll: 0,
+  scrollTimeout: null,
+  resizeTimeout: null,
+  scrollHandlers: []
+};
+
+// Debounce function for performance
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      if (!immediate) func(...args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func(...args);
+  };
+}
+
+// Throttle function for performance
+function throttle(func, limit) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
+
+// Optimized scroll handler
+function addOptimizedScrollListener(handler) {
+  const optimizedHandler = throttle(handler, 16);
+  perf.scrollHandlers.push(optimizedHandler);
+  window.addEventListener('scroll', optimizedHandler);
+}
+
+
 // ==============================
 // Enhanced Website Functionality with Performance Improvements
 // ==============================
