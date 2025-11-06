@@ -1,24 +1,27 @@
 {
-  "name": "الماسية للمطابخ",
+  "name": "الماسية للمطابخ والدريسينج",
   "short_name": "الماسية",
   "description": "تصميم وتنفيذ مطابخ الألومنيوم والخشب عالية الجودة - ضمان 10 سنوات",
-  "start_url": "/",
+  "start_url": "/massia-kitchen/",
   "display": "standalone",
   "background_color": "#0d0d0d",
   "theme_color": "#d4af37",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
     {
       "src": "images/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "lang": "ar",
-  "dir": "rtl"
+  "dir": "rtl",
+  "categories": ["business", "shopping"]
 }
