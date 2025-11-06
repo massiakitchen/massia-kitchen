@@ -19,6 +19,16 @@
       "type": "image/png"
     }
   ],
+  "scope": "/massia-kitchen/",
+  "categories": ["business", "shopping"],
+  "screenshots": [
+    {
+      "src": "images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
   "lang": "ar",
   "dir": "rtl"
 }
