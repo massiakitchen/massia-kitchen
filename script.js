@@ -1,3 +1,18 @@
+// تحسين إضافي للصور
+function preloadCriticalImages() {
+  const criticalImages = [
+    'images/logo-light.png',
+    'images/logo-dark.png',
+    'images/kitchen1.webp'
+  ];
+  
+  criticalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+
 // إصلاح الدوال المفقودة في script.js - أضف هذه الدوال:
 
 // دوال الأداء المفقودة
