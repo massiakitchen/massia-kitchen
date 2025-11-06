@@ -1,3 +1,118 @@
+// إضافة هذه الدوال للشيفرة الحالية
+function initEnhancedFeatures() {
+  // تحسين إمكانية الوصول
+  initAccessibility();
+  
+  // تحسين الأداء
+  initPerformanceOptimizations();
+  
+  // تحسين SEO
+  enhanceSEO();
+  
+  // تحسين التحليلات
+  initEnhancedAnalytics();
+}
+
+function initAccessibility() {
+  // إضافة اختصارات لوحة المفاتيح
+  document.addEventListener('keydown', function(e) {
+    // مفتاح الهروب لإغلاق النوافذ المنبثقة
+    if (e.key === 'Escape') {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox && lightbox.classList.contains('visible')) {
+        closeLightbox();
+      }
+    }
+    
+    // مفتاح M للقائمة الرئيسية
+    if (e.key === 'm' || e.key === 'M') {
+      document.querySelector('.mobile-menu-btn')?.click();
+    }
+  });
+  
+  // تحسين التنقل باللوحة المفاتيح
+  const focusableElements = document.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  
+  focusableElements.forEach((element, index) => {
+    element.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && this.tagName !== 'BUTTON' && this.tagName !== 'A') {
+        this.click();
+      }
+    });
+  });
+}
+
+function initPerformanceOptimizations() {
+  // تأخير تحميل الصور غير المرئية
+  const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-bg'));
+  
+  if ('IntersectionObserver' in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.backgroundImage = `url(${entry.target.dataset.bg})`;
+          lazyBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+}
+
+function enhanceSEO() {
+  // إضافة canonical URLs ديناميكية
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    const link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = window.location.href.split('?')[0];
+    document.head.appendChild(link);
+  }
+  
+  // تحديث عنوان الصفحة ديناميكياً
+  let originalTitle = document.title;
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      document.title = "العودة سريعاً - " + originalTitle;
+    } else {
+      document.title = originalTitle;
+    }
+  });
+}
+
+function initEnhancedAnalytics() {
+  // تتبع الأحداث المهمة
+  const importantEvents = [
+    'calculator_used',
+    'gallery_viewed', 
+    'contact_form_submitted',
+    'whatsapp_clicked'
+  ];
+  
+  importantEvents.forEach(event => {
+    const elements = document.querySelectorAll(`[data-track="${event}"]`);
+    elements.forEach(element => {
+      element.addEventListener('click', () => {
+        analytics.track(event, {
+          element_text: element.textContent.trim(),
+          element_type: element.tagName
+        });
+      });
+    });
+  });
+}
+
+// تهيئة كل التحسينات عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  initEnhancedFeatures();
+});
+
+
 // إضافة تحميل متقدم للصور
 function initAdvancedLazyLoading() {
   const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
