@@ -57,6 +57,10 @@ img {
 
 /* Base page */
 html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: relative;
   height: 100%;
   margin: 0;
   font-family: 'Cairo', sans-serif;
@@ -65,6 +69,54 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+}
+
+/* إصلاح خاص للشاشات الصغيرة */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px !important;
+    }
+    
+    .hero-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .hero-text, .hero-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* منع العناصر من الخروج خارج الشاشة */
+    img, .card, .price-item, .why-us-card {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* إصلاح الجرائد (grids) على الموبايل */
+@media (max-width: 768px) {
+    .pricing-grid,
+    .why-us-grid,
+    .warranty-grid,
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    }
+}
+
+/* إصلاح الجداول على الموبايل */
+.comparison-table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.comparison-table table {
+    min-width: 500px !important;
 }
 
 /* Light Mode */
@@ -188,6 +240,8 @@ body.light-mode {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
 /* Preloader */
