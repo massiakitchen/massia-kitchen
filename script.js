@@ -412,14 +412,6 @@ function createAnnouncer() {
 }
 
 
-// Enhanced performance functions
-const perf = {
-  lastScroll: 0,
-  scrollTimeout: null,
-  resizeTimeout: null,
-  scrollHandlers: []
-};
-
 // Debounce function for performance
 function debounce(func, wait, immediate) {
   let timeout;
