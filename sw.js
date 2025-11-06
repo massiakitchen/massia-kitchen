@@ -1,43 +1,49 @@
-// Service Worker for Caching
-const CACHE_NAME = 'almassia-v1.2.0';
+const CACHE_NAME = 'almassia-kitchen-v1.3.0';
 const urlsToCache = [
   '/',
+  '/index.html',
   '/style.css',
   '/script.js',
   '/images/logo-light.png',
   '/images/logo-dark.png',
-  '/images/kitchen1.webp',
-  '/images/kitchen2.webp'
+  '/images/kitchen1.webp'
 ];
 
-// Install Event
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(function(cache) {
-        return cache.addAll(urlsToCache);
+      .then((cache) => cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request)
+          .then((response) => {
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME)
+              .then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
+            return response;
+          });
       })
   );
 });
 
-// Fetch Event
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Return cached version or fetch new
-        return response || fetch(event.request);
-      }
-    )
-  );
-});
-
-// Activate Event
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
+        cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
