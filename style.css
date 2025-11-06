@@ -2567,3 +2567,60 @@ body.light-mode .footer-links a {
 
 /* small helpers */
 .hidden { display: none !important; }
+
+
+/* ==============================
+   Performance Optimizations
+============================== */
+
+/* Reduce repaints and improve scrolling */
+.hero, .header, .card {
+  will-change: transform;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .whatsapp-wrapper,
+  .theme-toggle,
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .hero-image {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  :root {
+    --gold: #000000;
+    --gold-dark: #000000;
+    --text: #000000;
+  }
+  
+  .btn-primary {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+}
