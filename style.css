@@ -119,6 +119,32 @@ html, body {
     min-width: 500px !important;
 }
 
+/* إصلاح الهيدر على الموبايل */
+.site-header {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.header-inner {
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 0 15px !important;
+}
+
+.brand {
+    max-width: 70% !important;
+}
+
+/* إصلاح القائمة على الموبايل */
+.main-nav {
+    display: none !important; /* نخفيها على الموبايل */
+}
+
+.mobile-menu-btn {
+    display: flex !important;
+}
+
 /* Light Mode */
 body.light-mode {
   --text: var(--light-text);
