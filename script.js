@@ -1,3 +1,49 @@
+// Enhanced Accessibility Functions
+const a11y = {
+  // Focus management for modals
+  trapFocus: function(element) {
+    const focusableElements = element.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  },
+
+  // Announce changes to screen readers
+  announce: function(message, priority = 'polite') {
+    const announcer = document.getElementById('a11y-announcer') || createAnnouncer();
+    announcer.setAttribute('aria-live', priority);
+    announcer.textContent = message;
+  }
+};
+
+function createAnnouncer() {
+  const announcer = document.createElement('div');
+  announcer.id = 'a11y-announcer';
+  announcer.setAttribute('aria-live', 'polite');
+  announcer.setAttribute('aria-atomic', 'true');
+  announcer.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;';
+  document.body.appendChild(announcer);
+  return announcer;
+}
+
+
 // Enhanced performance functions
 const perf = {
   lastScroll: 0,
