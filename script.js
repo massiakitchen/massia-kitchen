@@ -1,3 +1,43 @@
+// إصلاح الدوال المفقودة في script.js - أضف هذه الدوال:
+
+// دوال الأداء المفقودة
+function initOptimizedScroll() {
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        // Handle scroll events efficiently
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// دوال الـ Accessibility المفقودة
+function createAnnouncer() {
+  const announcer = document.getElementById('a11y-announcer');
+  if (!announcer) {
+    const newAnnouncer = document.createElement('div');
+    newAnnouncer.id = 'a11y-announcer';
+    newAnnouncer.setAttribute('aria-live', 'polite');
+    newAnnouncer.setAttribute('aria-atomic', 'true');
+    newAnnouncer.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;';
+    document.body.appendChild(newAnnouncer);
+  }
+}
+
+// دالة تحسين الصور
+function optimizeImages() {
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+}
+
+
 // إضافة هذه الدوال للشيفرة الحالية
 function initEnhancedFeatures() {
   // تحسين إمكانية الوصول
