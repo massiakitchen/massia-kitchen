@@ -1847,18 +1847,39 @@
   <script src="script.js"></script>
   
   <!-- Register Service Worker -->
+  <!-- Register Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')
           .then(function(registration) {
-            console.log('ServiceWorker registration successful');
+            console.log('ServiceWorker registered successfully:', registration.scope);
           })
           .catch(function(err) {
-            console.log('ServiceWorker registration failed: ', err);
+            console.log('ServiceWorker registration failed:', err);
           });
       });
     }
+  
+    // Initialize performance optimizations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize all optimized scroll handlers
+      initOptimizedScroll();
+      
+      // Initialize accessibility
+      createAnnouncer();
+      
+      // Track performance
+      if ('performance' in window) {
+        setTimeout(() => {
+          const perfEntries = performance.getEntriesByType('navigation');
+          if (perfEntries.length > 0) {
+            const navTiming = perfEntries[0];
+            console.log('Page load time:', navTiming.loadEventEnd - navTiming.navigationStart + 'ms');
+          }
+        }, 0);
+      }
+    });
   </script>
 </body>
 </html>
