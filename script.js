@@ -1,3 +1,25 @@
+// دوال الأداء المفقودة
+function initOptimizedScroll() {
+  // Initialize any scroll optimizations here
+  console.log('Scroll optimizations initialized');
+}
+
+// دوال الـ Accessibility المفقودة
+function createAnnouncer() {
+  const announcer = document.getElementById('a11y-announcer');
+  if (!announcer) {
+    const newAnnouncer = document.createElement('div');
+    newAnnouncer.id = 'a11y-announcer';
+    newAnnouncer.setAttribute('aria-live', 'polite');
+    newAnnouncer.setAttribute('aria-atomic', 'true');
+    newAnnouncer.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;';
+    document.body.appendChild(newAnnouncer);
+    return newAnnouncer;
+  }
+  return announcer;
+}
+
+
 // Enhanced Accessibility Functions
 const a11y = {
   // Focus management for modals
