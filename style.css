@@ -558,11 +558,11 @@ body.light-mode header.scrolled {
   align-items: center; 
   justify-content: space-between; 
   gap: 20px;
-  min-height: 82vh; 
+  min-height: auto !important; 
   position: relative; 
   overflow: hidden;
   color: var(--text);
-  padding: 48px 0;
+  padding: 20px 0 !important;
 }
 
 body.light-mode .hero {
@@ -586,15 +586,22 @@ body.light-mode .hero .overlay {
   position: relative; 
   z-index: 2; 
   display: flex; 
-  gap: 28px; 
   align-items: center; 
   width: 100%; 
   justify-content: space-between; 
   flex-wrap: wrap; 
+  flex-direction: column-reverse !important;
+  gap: 20px !important;
+  text-align: center !important;
 }
 
-.hero-text { 
-  max-width: 540px; 
+.hero-text {
+   max-width: 540px;
+}
+
+.hero-text, .hero-image {  
+  width: 100% !important;
+  padding: 0 10px !important;
 }
 
 .hero-text h2 { 
@@ -690,9 +697,11 @@ body.light-mode .badge {
   width: 100%; 
   height: 360px; 
   object-fit: cover; 
-  border-radius: 14px; 
   box-shadow: 0 12px 40px rgba(0,0,0,0.6); 
   transform: translateY(6px); 
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 10px !important;
 }
 
 body.light-mode .hero-image img {
@@ -1096,15 +1105,25 @@ body.light-mode .rating-system p {
   margin: 0 auto;
 }
 
+.calculator-content {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 15px !important;
+}
+
 .calculator-tabs {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column !important;
+  gap: 10px !important;
 }
 
 .calculator-tab {
+  width: 100% !important;
+  text-align: center !important;
   background: transparent;
   border: 2px solid var(--gold);
   color: var(--gold);
