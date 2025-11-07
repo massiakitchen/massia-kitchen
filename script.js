@@ -1,3 +1,58 @@
+// إصلاح ظهور العروض الخاصة فوراً
+function initSpecialOffers() {
+    const specialOffers = document.querySelector('.special-offers');
+    if (specialOffers) {
+        // إظهار القسم فوراً بدون انتظار الـ scroll
+        specialOffers.classList.add('active');
+        specialOffers.style.opacity = '1';
+        specialOffers.style.visibility = 'visible';
+        specialOffers.style.transform = 'translateY(0)';
+        
+        // إظهار عناصر العرض مع تأثير متتابع
+        const offerItems = specialOffers.querySelectorAll('.offer-item');
+        offerItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            }, index * 200); // تأخير 200ms بين كل عنصر
+        });
+    }
+}
+
+// استدعِ الدالة في التهيئة الآمنة
+function safeInit() {
+    console.log('Mobile safe initialization started');
+    
+    // معالجة الأخطاء أولاً
+    handleErrors();
+    
+    // تهيئة الـ Preloader
+    try {
+        initPreloader();
+    } catch (error) {
+        console.log('Preloader failed, using fallback:', error);
+        fallbackPreloader();
+    }
+    
+    // إظهار العروض الخاصة فوراً
+    initSpecialOffers();
+    
+    // تهيئة بسيطة للعناصر
+    safeRevealElements();
+    
+    // تهيئة القائمة المتنقلة
+    initMobileMenu();
+    
+    // تهيئة الحاسبة
+    try {
+        initCalculator();
+    } catch (error) {
+        console.log('Calculator init failed:', error);
+    }
+    
+    console.log('Mobile initialization completed');
+}
+
 // تحسين إضافي للصور
 function preloadCriticalImages() {
   const criticalImages = [
