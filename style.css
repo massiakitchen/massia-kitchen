@@ -82,10 +82,10 @@ html, body {
         text-align: center !important;
     }
     
-    .hero-text, .hero-image {
+    /*.hero-text, .hero-image {
         width: 100% !important;
         max-width: 100% !important;
-    }
+    }*/
     
     /* منع العناصر من الخروج خارج الشاشة */
     img, .card, .price-item, .why-us-card {
