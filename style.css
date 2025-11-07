@@ -1554,6 +1554,10 @@ body.light-mode .option-name {
   margin-bottom: 2rem;
   border: 2px solid #ff6b6b;
   background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(238,90,36,0.05));
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .offer-header {
@@ -1586,12 +1590,41 @@ body.light-mode .option-name {
   padding: 2rem;
 }
 
+/* تأكد أن العروض تظهر فوراً */
+.offers-grid {
+    opacity: 1 !important;
+}
+
 .offer-item {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
   border: 1px solid rgba(255,107,107,0.3);
+}
+
+.offer-item {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    animation: fadeInUp 0.6s ease !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* إصلاح الـ Intersection Observer للعروض */
+.special-offers.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 body.light-mode .offer-item {
