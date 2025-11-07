@@ -1560,6 +1560,47 @@ body.light-mode .option-name {
   transform: translateY(0) !important;
 }
 
+/* إصلاح ظهور العروض الخاصة فوراً */
+.special-offers {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+}
+
+.special-offers.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.offers-grid {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.offer-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: quickFadeIn 0.6s ease !important;
+}
+
+@keyframes quickFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تعطيل Intersection Observer للعروض الخاصة */
+.special-offers.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 .offer-header {
   display: flex;
   justify-content: space-between;
