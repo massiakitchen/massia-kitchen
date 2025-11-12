@@ -882,3 +882,125 @@ function initComponents() {
   initBookingSystem();
   initPricingGrid();
 }
+
+
+// ==============================
+// Reviews Slider Functionality
+// ==============================
+
+let currentReview = 0;
+const totalReviews = 5; // عدد التقييمات
+let autoSlideInterval;
+
+function initReviewsSlider() {
+  const reviewCards = $$('.review-card');
+  const indicators = $$('.indicator');
+  
+  // تأكد من أن أول تقييم مرئي
+  showReview(0);
+  
+  // بدء التشغيل التلقائي
+  startAutoSlide();
+  
+  // إضافة event listeners للمؤشرات
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      clearInterval(autoSlideInterval);
+      showReview(index);
+      startAutoSlide();
+    });
+  });
+  
+  // إضافة event listeners لأزرار التنقل
+  const prevBtn = $('.slider-nav.prev');
+  const nextBtn = $('.slider-nav.next');
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoSlideInterval);
+      prevReview();
+      startAutoSlide();
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoSlideInterval);
+      nextReview();
+      startAutoSlide();
+    });
+  }
+}
+
+function showReview(index) {
+  const reviewCards = $$('.review-card');
+  const indicators = $$('.indicator');
+  
+  // إخفاء جميع التقييمات
+  reviewCards.forEach(card => {
+    card.classList.remove('active');
+    card.style.display = 'none';
+  });
+  
+  // إزالة النشاط من جميع المؤشرات
+  indicators.forEach(indicator => {
+    indicator.classList.remove('active');
+  });
+  
+  // عرض التقييم الحالي
+  if (reviewCards[index]) {
+    reviewCards[index].classList.add('active');
+    reviewCards[index].style.display = 'block';
+  }
+  
+  // تفعيل المؤشر الحالي
+  if (indicators[index]) {
+    indicators[index].classList.add('active');
+  }
+  
+  currentReview = index;
+  
+  // تتبع الحدث
+  trackEvent('reviews', 'slide_change', `review_${index + 1}`);
+}
+
+function nextReview() {
+  currentReview = (currentReview + 1) % totalReviews;
+  showReview(currentReview);
+}
+
+function prevReview() {
+  currentReview = (currentReview - 1 + totalReviews) % totalReviews;
+  showReview(currentReview);
+}
+
+function startAutoSlide() {
+  // إيقاف أي interval سابق
+  clearInterval(autoSlideInterval);
+  
+  // بدء interval جديد
+  autoSlideInterval = setInterval(() => {
+    nextReview();
+  }, 5000); // تغيير كل 5 ثواني
+}
+
+// جعل الدوال متاحة globally للاستدعاء من HTML
+window.nextReview = nextReview;
+window.prevReview = prevReview;
+
+// تحديث دالة initComponents لتشمل السلايدر
+function initComponents() {
+  initThemeToggle();
+  initMobileMenu();
+  initRevealAnimations();
+  initHeaderScroll();
+  initLazyLoading();
+  initWhatsAppFAB();
+  initButtonAnimations();
+  initLightbox();
+  initFAQ();
+  initReviewsSlider(); // أضف هذا السطر
+  initBranchMaps();
+  initBookingSystem();
+  initPricingGrid();
+}
