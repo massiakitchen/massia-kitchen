@@ -1,0 +1,48 @@
+<!-- ===== Works / Gallery ===== -->
+<section id="works" class="section works reveal">
+  <div class="container">
+    <h3 class="gold-title">أعمالنا</h3>
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="aluminum">مطابخ الألومنيوم</button>
+      <button class="filter-btn" data-filter="wood">مطابخ الخشب</button>
+    </div>
+
+    <!-- Skeleton Loading -->
+    <div class="skeleton-grid" id="skeletonGrid">
+      <div class="card skeleton skeleton-image"></div>
+      <div class="card skeleton skeleton-image"></div>
+      <div class="card skeleton skeleton-image"></div>
+    </div>
+
+    <div class="grid gallery-grid" id="galleryGrid" style="display: none;">
+      <!-- Aluminum -->
+      <figure class="card item aluminum modern reveal">
+        <picture>
+          <source srcset="images/Aluminum/1.webp" type="image/webp">
+          <source srcset="images/Aluminum/1.jpeg" type="image/jpeg">
+          <img src="images/Aluminum/1.jpeg" alt="مطبخ ألومنيوم عصري مقاوم للرطوبة" loading="lazy" width="400" height="300">
+        </picture>
+        <figcaption>
+          <h4>تصميم ألومنيوم 1</h4>
+          <p>تصميم عصري مقاوم للرطوبة</p>
+          <span class="project-price">٢٥٬٠٠٠ ج</span>
+        </figcaption>
+      </figure>
+
+      <figure class="card item wood reveal">
+        <picture>
+          <source srcset="images/Wood/2.webp" type="image/webp">
+          <source srcset="images/Wood/2.jpeg" type="image/jpeg">
+          <img src="images/Wood/2.jpeg" alt="مطبخ خشب بتفاصيل دقيقة وعناية بالتشطيب" loading="lazy" width="400" height="300">
+        </picture>
+        <figcaption>
+          <h4>مطبخ خشب 4</h4>
+          <p>تفاصيل دقيقة وعناية بالتشطيب</p>
+          <span class="project-price">٣٥٬٠٠٠ جنية</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

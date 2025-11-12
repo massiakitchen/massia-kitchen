@@ -1,0 +1,58 @@
+<!-- ===== Contact ===== -->
+<section id="contact" class="section contact-section reveal">
+  <div class="container contact-inner">
+    <div class="contact-card card reveal">
+      <h3 class="gold-title">تواصل معنا</h3>
+      <p>للاستفسار أو طلب قياس/عرض سعر</p>
+      <p>تواصل معنا على :</p>
+      <div class="contact-row">
+        <a class="big-link whatsapp-btn" href="tel:+201092497811">📞 01092497811</a>
+        <a class="big-link whatsapp-btn" href="https://wa.me/201092497811" target="_blank" rel="noopener">💬 واتساب</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="info-item">
+          <span>📧 البريد الإلكتروني</span>
+          <a href="mailto:info@almassia.com">info@almassia.com</a>
+        </div>
+        <div class="info-item">
+          <span>🕒 أوقات العمل</span>
+          <span>9 ص - 9 م طوال الأسبوع</span>
+        </div>
+        <div class="info-item">
+          <span>📍 العنوان</span>
+          <span>المنصورة - شارع عبد السلام عارف</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form card reveal">
+      <h4>أرسل طلبك سريعًا</h4>
+      <form id="leadForm" method="POST" onsubmit="return handleForm(event)">
+        <div class="form-group">
+          <label for="name">الاسم الكامل</label>
+          <input type="text" id="name" name="name" required placeholder="اسمك الثلاثي" aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+20 10XXXXXXXX" aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="service">نوع الخدمة المطلوبة</label>
+          <select id="service" name="service" required aria-required="true">
+            <option value="">اختر الخدمة</option>
+            <option value="consultation">استشارة تصميم</option>
+            <option value="measurement">قياس منزلي</option>
+            <option value="quotation">عرض سعر</option>
+          </select>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

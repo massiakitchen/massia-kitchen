@@ -1,0 +1,525 @@
+
+/* ==============================
+   Enhanced Contact Section
+============================== */
+
+.contact-section {
+  background: linear-gradient(135deg, rgba(212,175,55,0.03), rgba(212,175,55,0.01));
+}
+
+.contact-subtitle {
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Quick Contact Grid */
+.quick-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.quick-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 2px solid rgba(212,175,55,0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.quick-contact-btn:hover::before {
+  left: 100%;
+}
+
+.quick-contact-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 25px rgba(212,175,55,0.15);
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.btn-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.btn-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.btn-subtitle {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Enhanced Contact Info */
+.contact-info-enhanced {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(212,175,55,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.1);
+}
+
+.info-item-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.info-item-enhanced:not(:last-child) {
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-label {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.info-value {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.info-value:hover {
+  color: var(--gold-dark);
+}
+
+/* Enhanced Social Media */
+.socials-enhanced {
+  margin-top: 2rem;
+}
+
+.socials-title {
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(212,175,55,0.1);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.1);
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+.social-name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Enhanced Contact Form */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h4 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid rgba(212,175,55,0.2);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: 'Cairo', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.textarea-icon {
+  position: absolute;
+  left: 1rem;
+  top: 2.5rem;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* File Upload */
+.file-upload {
+  position: relative;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px dashed rgba(212,175,55,0.3);
+  border-radius: 8px;
+  background: rgba(212,175,55,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+
+.file-upload-label:hover {
+  border-color: var(--gold);
+  background: rgba(212,175,55,0.1);
+}
+
+.upload-icon {
+  font-size: 1.2rem;
+}
+
+.upload-text {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Enhanced Form Actions */
+.form-actions-enhanced {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.btn-submit {
+  position: relative;
+  min-width: 150px;
+}
+
+.btn-loading {
+  display: none;
+}
+
+/* Form Footer */
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(212,175,55,0.1);
+}
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.privacy-icon {
+  font-size: 1rem;
+}
+
+.response-time {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quick-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .socials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions-enhanced {
+    flex-direction: column;
+  }
+  
+  .contact-info-enhanced {
+    padding: 1rem;
+  }
+}
+
+
+
+/* ==============================
+   Enhanced Contact Form
+============================== */
+
+.image-upload-container {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.image-upload-input {
+  display: none;
+}
+
+.image-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 2px dashed rgba(212,175,55,0.3);
+  border-radius: 8px;
+  background: rgba(212,175,55,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.image-upload-label:hover {
+  border-color: var(--gold);
+  background: rgba(212,175,55,0.1);
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-text {
+  color: var(--text);
+  font-weight: 600;
+}
+
+body.light-mode .upload-text {
+  color: var(--light-text);
+}
+
+.image-preview {
+  margin-top: 1rem;
+  display: none;
+}
+
+.image-preview.active {
+  display: block;
+}
+
+.preview-image {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+}
+
+.preview-remove {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.quick-selection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quick-btn {
+  padding: 0.5rem;
+  border: 1px solid rgba(212,175,55,0.3);
+  background: var(--card-bg);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+body.light-mode .quick-btn {
+  background: var(--light-card);
+}
+
+.quick-btn:hover {
+  border-color: var(--gold);
+  background: rgba(212,175,55,0.1);
+}
+
+.quick-btn.active {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
+}
+
+.form-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(212,175,55,0.3);
+  z-index: 1;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid rgba(212,175,55,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+body.light-mode .step {
+  background: var(--light-card);
+}
+
+.step.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #000;
+}
+
+.step.completed {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}

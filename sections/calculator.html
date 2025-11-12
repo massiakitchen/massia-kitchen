@@ -1,0 +1,66 @@
+<!-- ===== Cost Calculator ===== -->
+<section id="calculator" class="section calculator reveal">
+  <div class="container">
+    <h3 class="gold-title">حاسبة تكلفة المطبخ</h3>
+    <div class="calculator-card card calculator-enhanced">
+      <div class="calculator-tabs">
+        <button class="calculator-tab active" data-tab="area">حساب بالمساحة</button>
+        <button class="calculator-tab" data-tab="dimensions">حساب بالأبعاد</button>
+      </div>
+      
+      <div class="calculator-tab-content active" id="area-tab">
+        <div class="calculator-content">
+          <div class="calculator-inputs">
+            <div class="input-group">
+              <label for="kitchen-area">مساحة المطبخ (م²)</label>
+              <input type="range" id="kitchen-area" min="5" max="30" value="12" aria-describedby="area-value">
+              <span id="area-value">12 م²</span>
+            </div>
+            
+            <div class="input-group">
+              <label for="material-type">نوع الخامات</label>
+              <select id="material-type">
+                <option value="economy">اقتصادي (MDF)</option>
+                <option value="standard">قياسي (ألومنيوم)</option>
+                <option value="premium">فاخر (خشب طبيعي)</option>
+              </select>
+            </div>
+            
+            <div class="input-group">
+              <label for="drawers-count">عدد الأدراج والخزانات</label>
+              <input type="range" id="drawers-count" min="5" max="25" value="12" aria-describedby="drawers-value">
+              <span id="drawers-value">12 قطعة</span>
+            </div>
+          </div>
+          
+          <div class="calculator-result">
+            <div class="result-card">
+              <h4>التكلفة التقريبية</h4>
+              <div class="estimated-cost" id="estimated-cost">٢٥٬٠٠٠ جنيه</div>
+              
+              <div class="cost-breakdown-enhanced">
+                <div class="cost-item">
+                  <span>التصميم والتصنيع:</span>
+                  <span id="manufacturing-cost">١٥٬٠٠٠ جنية</span>
+                </div>
+                <div class="cost-item">
+                  <span>الخامات:</span>
+                  <span id="material-cost">٨٬٠٠٠ جنية</span>
+                </div>
+                <div class="cost-item">
+                  <span>التركيب:</span>
+                  <span id="installation-cost">٢٬٠٠٠ جنية</span>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary btn-full" onclick="requestDetailedQuote()">
+                اطلب عرض سعر دقيق
+              </button>
+              <p class="note">* الأسعار تقريبية وقد تختلف حسب التفاصيل والقياسات الفعلية</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
