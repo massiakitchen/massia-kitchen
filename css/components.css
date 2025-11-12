@@ -1623,55 +1623,40 @@ body.light-mode .branch-contact span {
 }
 
 /* ==============================
-   Enhanced Reviews Section
+   Reviews Section Enhanced
 ============================== */
-
 .reviews {
   background: linear-gradient(135deg, rgba(212,175,55,0.03), rgba(212,175,55,0.01));
-}
-
-.section-description {
-  color: var(--text);
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.light-mode .section-description {
-  color: var(--light-text);
 }
 
 .reviews-container {
   position: relative;
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
 }
 
 .reviews-slider {
   position: relative;
   background: var(--card-bg);
-  border-radius: 20px;
+  border-radius: var(--radius);
   padding: 2rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   border: 1px solid rgba(212,175,55,0.1);
 }
 
 body.light-mode .reviews-slider {
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.05);
 }
 
 .slider-container {
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
 
 .slider-track {
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 500%; /* 5 reviews */
+  transition: transform 0.5s ease-in-out;
+  width: 500%; /* 5 reviews * 100% */
 }
 
 .review-card {
@@ -1682,7 +1667,7 @@ body.light-mode .reviews-slider {
 
 .review-card.active {
   display: block;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -1692,24 +1677,27 @@ body.light-mode .reviews-slider {
 
 .review-content {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
 }
 
 .rating {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: var(--gold);
-  letter-spacing: 4px;
 }
 
 .review-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text);
   margin-bottom: 2rem;
   font-style: italic;
   position: relative;
   padding: 0 2rem;
+}
+
+body.light-mode .review-text {
+  color: var(--light-text);
 }
 
 .review-text::before,
@@ -1731,42 +1719,38 @@ body.light-mode .reviews-slider {
   left: 0;
 }
 
-body.light-mode .review-text {
-  color: var(--light-text);
-}
-
 .review-author {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  border-top: 1px solid rgba(212,175,55,0.2);
+  gap: 1rem;
+  border-top: 1px solid rgba(212,175,55,0.3);
   padding-top: 1.5rem;
 }
 
 .customer-avatar {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #000;
   font-weight: 700;
   font-size: 1.2rem;
-  border: 3px solid rgba(212,175,55,0.3);
+  flex-shrink: 0;
 }
 
 .author-info {
   text-align: right;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .author-info strong {
   color: var(--gold);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
 
@@ -1777,13 +1761,17 @@ body.light-mode .review-text {
   margin-bottom: 0.25rem;
 }
 
+body.light-mode .author-info span {
+  color: var(--light-text);
+}
+
 .review-date {
   color: var(--muted);
   font-size: 0.8rem;
 }
 
-body.light-mode .author-info span {
-  color: var(--light-text);
+body.light-mode .review-date {
+  color: #666;
 }
 
 /* Navigation Buttons */
@@ -1843,11 +1831,6 @@ body.light-mode .author-info span {
   transform: scale(1.2);
 }
 
-.indicator:hover {
-  background: var(--gold);
-  transform: scale(1.1);
-}
-
 /* Reviews Stats */
 .reviews-stats {
   margin: 3rem 0;
@@ -1857,22 +1840,19 @@ body.light-mode .author-info span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .stat-item {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
   background: var(--card-bg);
-  border-radius: 15px;
+  border-radius: var(--radius);
   border: 1px solid rgba(212,175,55,0.1);
-  transition: transform 0.3s ease;
 }
 
-.stat-item:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold);
+body.light-mode .stat-item {
+  background: var(--light-card);
 }
 
 .stat-number {
@@ -1897,7 +1877,7 @@ body.light-mode .stat-label {
   text-align: center;
   padding: 3rem 2rem;
   background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.05));
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: 1px solid rgba(212,175,55,0.2);
   margin-top: 2rem;
 }
@@ -1928,22 +1908,16 @@ body.light-mode .reviews-cta p {
 /* Responsive Design */
 @media (max-width: 768px) {
   .reviews-slider {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .review-content {
+    padding: 1rem;
   }
   
   .review-text {
-    font-size: 1.1rem;
     padding: 0 1rem;
-  }
-  
-  .review-author {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .author-info {
-    text-align: center;
+    font-size: 1rem;
   }
   
   .slider-nav {
@@ -1960,13 +1934,22 @@ body.light-mode .reviews-cta p {
     left: -15px;
   }
   
+  .review-author {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-info {
+    text-align: center;
+  }
+  
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
   .stat-item {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
   }
   
   .stat-number {
@@ -1980,23 +1963,18 @@ body.light-mode .reviews-cta p {
 }
 
 @media (max-width: 480px) {
-  .reviews-slider {
-    padding: 1rem;
-  }
-  
-  .review-content {
-    padding: 1rem 0.5rem;
-  }
-  
-  .slider-nav {
-    display: none;
-  }
-  
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  
+  .review-text {
+    font-size: 0.9rem;
+  }
+  
+  .rating {
+    font-size: 1.5rem;
+  }
 }
-
 
 
 /* ==============================
@@ -3661,4 +3639,5 @@ body.light-mode .form-group textarea {
   .socials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
