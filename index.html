@@ -78,7 +78,7 @@
   }
   </script>
 
-
+   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/calculator.js"></script>
   <script src="js/gallery.js"></script>
@@ -1716,11 +1716,15 @@
     <button class="close-lightbox" aria-label="إغلاق">&times;</button>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/calculator.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/form-handler.js"></script>
+ 
+
+
+  <script>
+  // تأكد من أن الدوال تعمل
+  document.addEventListener('DOMContentLoaded', function() {
+    initComponents();
+  });
+</script>
   
   <!-- Register Service Worker -->
   <script>
