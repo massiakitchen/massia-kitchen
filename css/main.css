@@ -99,7 +99,7 @@ body.light-mode {
 
 /* Sections & reveals */
 .section { 
-  padding: 56px 0; 
+  padding: 15px 0; 
   text-align: center; 
   opacity: 0; 
   transform: translateY(20px); 
