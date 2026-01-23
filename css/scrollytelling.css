@@ -1,0 +1,352 @@
+/* Scrollytelling Section Styles */
+.scrolly-section {
+    position: relative;
+    height: 105vh;
+    /* Extremely tight to ensure no dead space */
+    background: transparent;
+    /* Use the body's fixed background for perfect sync */
+    /* Sync with Materials section */
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.scrolly-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Parallax Background */
+.parallax-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.p-item {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    filter: blur(0px);
+    transform: rotate(0deg);
+    /* Straight by default */
+    will-change: transform, opacity;
+}
+
+.p-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Positioning items spread out with varied orientations */
+.p-1 {
+    top: 8%;
+    left: 3%;
+    width: 340px;
+    height: 220px;
+}
+
+/* Landscape */
+.p-2 {
+    top: 12%;
+    right: 4%;
+    width: 220px;
+    height: 320px;
+}
+
+/* Portrait */
+.p-3 {
+    bottom: 8%;
+    left: 4%;
+    width: 360px;
+    height: 240px;
+}
+
+/* Landscape */
+.p-4 {
+    bottom: 10%;
+    right: 3%;
+    width: 200px;
+    height: 300px;
+}
+
+/* Portrait */
+.p-5 {
+    top: 40%;
+    left: -6%;
+    width: 300px;
+    height: 200px;
+}
+
+/* Landscape */
+.p-6 {
+    top: 35%;
+    right: -6%;
+    width: 240px;
+    height: 360px;
+}
+
+/* Portrait */
+.p-7 {
+    top: 2%;
+    left: 42%;
+    width: 280px;
+    height: 180px;
+}
+
+/* Landscape */
+.p-8 {
+    bottom: 3%;
+    left: 43%;
+    width: 210px;
+    height: 310px;
+}
+
+/* Portrait */
+.p-9 {
+    top: 70%;
+    left: 18%;
+    width: 230px;
+    height: 340px;
+}
+
+/* Portrait */
+.p-10 {
+    top: 72%;
+    right: 18%;
+    width: 350px;
+    height: 230px;
+}
+
+/* Landscape */
+
+/* Fixed Content */
+.scrolly-content {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.scrolly-card {
+    padding: 3rem;
+    border-radius: 32px;
+    background: rgba(10, 10, 10, 0.85);
+    /* Darker and more opaque for better clarity */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    transition: none;
+    /* Let GSAP handle animation */
+    position: relative;
+}
+
+.card-header-actions {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.hero-theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--gold);
+    transition: all 0.3s ease;
+}
+
+.hero-theme-toggle:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: rotate(15deg);
+}
+
+.scrolly-card h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.scrolly-card h2 {
+    font-size: 1.8rem;
+    opacity: 0.9;
+    margin-bottom: 1.2rem;
+}
+
+.scrolly-card p.scrolly-desc-mini {
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.card-footer-trust {
+    margin: 1.5rem 0 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.card-footer-trust span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scrolly-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Animated Border Button (Matching cu-tab-btn exactly) */
+.btn-animate-border {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-animate-border::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 80deg,
+            var(--gold) 120deg,
+            #ff8c00 180deg,
+            #ffbf00 240deg,
+            transparent 300deg);
+    transform: translate(-50%, -50%);
+    animation: centerSpin 3s linear infinite;
+    z-index: -2;
+    opacity: 1;
+}
+
+.btn-animate-border::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #000 !important;
+    /* Internal mask matching cu-tab-btn active */
+    border-radius: 48px;
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+.btn-animate-border:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+}
+
+body.light-mode .btn-animate-border::after {
+    background: var(--gold-dark) !important;
+}
+
+body.light-mode .btn-animate-border {
+    color: #fff !important;
+}
+
+/* Ambient Glows - Updated to Gold Only & Positioned Behind */
+.scrolly-section .ambient-glow {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    filter: blur(120px);
+    z-index: 0;
+    /* Behind parallax items */
+    opacity: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+}
+
+.scrolly-section .ambient-glow.gold {
+    opacity: 0.25;
+}
+
+.scrolly-section .ambient-glow.top-left {
+    top: -10%;
+    left: -10%;
+}
+
+.scrolly-section .ambient-glow.bottom-right {
+    bottom: -10%;
+    right: -10%;
+}
+
+.scrolly-section .ambient-glow.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scrolly-card h1 {
+        font-size: 2.5rem;
+    }
+
+    .scrolly-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .scrolly-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-animate-border {
+        width: 100%;
+    }
+
+    .p-item {
+        width: 220px;
+        height: 150px;
+    }
+
+    .p-5,
+    .p-6 {
+        display: none;
+    }
+}
